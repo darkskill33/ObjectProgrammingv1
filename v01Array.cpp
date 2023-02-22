@@ -34,7 +34,6 @@ void sort(studentas &temp, int n)
         }
     }
 }
-
 void mediana(studentas &temp, int n)
 {
     sort(temp, n);
@@ -54,12 +53,12 @@ void mediana(studentas &temp, int n)
 
 void pild(studentas &temp, int &times)
 {
+    times = 0;
     cout << "Iveskite varda ir pavarde: "; cin >> temp.vardas >> temp.pavarde;
 
     int cs = 10000, ns;
     int mas[cs];
     string check;
-    times = 0;
 
     char pas;
     cout << "Jei norite atsitiktinai sugeneruoti pažymius ir egzamino rezultatą, įveskite (k), jei duomenis įvesite pats, įveskite (s): " << endl;
@@ -124,7 +123,6 @@ void pild(studentas &temp, int &times)
             cout << "Generuojami pažymiai: " << endl;
             srand(time(0));
             times = (rand()%10)+1;
-            cout << "TIMES: " << times << endl;
             for (int i = 0; i < times; i++)
             {
                 int c = (rand()%10)+1; 
@@ -154,13 +152,13 @@ void spausd(studentas &temp, int pazsk, char ats)
     if (ats == 'G' || ats == 'g')
     {
         double kint = (0.4*temp.gal/(double)pazsk +  temp.egz*0.6);
-        cout << left << setw(19)  << setprecision(2) << fixed << kint << endl;  
+        cout << left << setw(19)  << setprecision(2) << fixed << kint << " - " << endl;  
     }
 
     if(ats == 'M' || ats == 'm')
     {
         mediana(temp, pazsk);
-        cout << left << setw(19)  << temp.med << endl;
+        cout << left << setw(19)  << " - " << (0.4*temp.med + temp.egz*0.6) << endl;
     }
     delete [] temp.paz;
 }

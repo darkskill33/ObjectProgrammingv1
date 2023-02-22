@@ -153,7 +153,7 @@ void spausd(studentas& temp, char ats)
     if(ats == 'M' || ats == 'm')
     {
         mediana(temp, temp.paz.size());
-        cout << left << setw(19)  << " - " << temp.med << endl;
+        cout << left << setw(19)  << " - " << (0.4*temp.med + temp.egz*0.6)<< endl;
     }
 }
 
@@ -174,8 +174,8 @@ int main()
 
     char ats;  
     cout << "Jei norite matyti:" << endl;  
-    cout << "Galutinį pažymį, rašykite (G)" << endl;
-    cout << "Mediana, rašykite (M)" << endl;
+    cout << "Galutinį pažymį(Vidurkis), rašykite (G)" << endl;
+    cout << "Galutinį pažymį(Mediana), rašykite (M)" << endl;
     cin >> ats;
     cout << endl;
     cout << "------------------------------------------------------------------------------" <<endl;
