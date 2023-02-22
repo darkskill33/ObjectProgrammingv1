@@ -51,6 +51,7 @@ void mediana(studentas &temp, int n)
         temp.med = mid1;
     }
 }
+
 void pild(studentas& temp)
 {
     cout << "Iveskite varda ir pavarde: "; cin >> temp.vardas >> temp.pavarde;
@@ -87,7 +88,11 @@ void pild(studentas& temp)
             } else if(check_nd > 0 && check_nd <=10)
                     {
                         temp.paz.push_back(check_nd);
-                    }
+                    } else if(check_nd < 0 || check_nd > 10)
+                        {
+                            cout << "Iveskite SKAICIU intervale [1; 10]: " << endl;
+                            continue;
+                        }
         }
 
         cout << "Iveskite egzamino paz.: ";
