@@ -32,23 +32,18 @@ bool equality(studentas &x, studentas &y)
     } else return x.vardas < y.vardas;
 }
 
-void sortas(studentas &temp, int n) //number sorting function
+
+bool grading(studentas &x, studentas &y)
 {
-    for (int i = 0; i < n; i++)
-    {  
-        for (int j = i + 1 ; j < n; j++)
-        {
-            if(temp.paz[i] < temp.paz[j])
-            {
-                swap(temp.paz[i], temp.paz[j]);
-            }
-        }
-    }
+  if(x.pavarde == y.pavarde) 
+    {
+        return x.pavarde < y.pavarde;
+    } else return x.vardas < y.vardas;  
 }
 
 void mediana(studentas &temp, int n) //mediana search function;
 {
-    sortas(temp, n);
+    sort(temp.paz.begin(), temp.paz.end()); //sorting grades (descending);
     float mid1, mid2;
     if(n == 2*(n/2))
     {
@@ -238,7 +233,7 @@ int main()
         cout << endl;
     } while (ats != 'g' && ats != 'G' && ats != 'm' && ats != 'M');
 
-    std::sort(mas.begin(), mas.end(), equality); //data sorting by name/lastname;  If "equality" function returns "False", it let's us know, that the "First" argument shouldn't be placed before "Second" argument, arguments would be swaped;
+    sort(mas.begin(), mas.end(), equality); //data sorting by name/lastname;  If "equality" function returns "False", it let's us know, that the "First" argument shouldn't be placed before "Second" argument, arguments would be swaped;
 
     fr << "------------------------------------------------------------------------------" <<endl;
     fr  << left << setw(16) << "Vardas"  << left << setw(14) << "Pavardė " << left << setw(12)  << "Galutinis(Vid.)/Galutinis(Med.)"<<  endl;
