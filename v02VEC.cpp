@@ -24,7 +24,15 @@ bool isnumber(string str) //check if string is number;
     return 1;
 }
 
-void sort(studentas &temp, int n) //number sorting function
+bool equality(studentas &x, studentas &y)
+{
+    if(x.pavarde == y.pavarde) 
+    {
+        return x.pavarde < y.pavarde;
+    } else return x.vardas < y.vardas;
+}
+
+void sortas(studentas &temp, int n) //number sorting function
 {
     for (int i = 0; i < n; i++)
     {  
@@ -38,30 +46,9 @@ void sort(studentas &temp, int n) //number sorting function
     }
 }
 
-void sortname(vector<studentas> &mas) //name sorting function
-{
-    int a = mas.size();
-    for (int i = 0; i < a; i++)
-    {  
-        for (int j = i + 1 ; j < a-1; j++)
-        {
-            if(mas[i].vardas > mas[j].vardas)
-            {
-                swap(mas[i], mas[j]);
-            } else if(mas[i].vardas == mas[j].vardas) //if names are the same, we sort by last name;
-                    {
-                        if(mas[i].pavarde < mas[j].pavarde)
-                        {   
-                            swap(mas[i], mas[j]);
-                        }
-                    }
-        }
-    }
-}
-
 void mediana(studentas &temp, int n) //mediana search function;
 {
-    sort(temp, n);
+    sortas(temp, n);
     float mid1, mid2;
     if(n == 2*(n/2))
     {
@@ -237,7 +224,7 @@ int main()
         }while (uzkl!='n' && uzkl!='N');   
     } else if(rink == 'f' || rink == 'F')
             {
-                eil_po_eil("kursiokai.txt", tempas, mas);
+                eil_po_eil("kursiokai100000.txt", tempas, mas);
             }
     
 
@@ -251,8 +238,8 @@ int main()
         cout << endl;
     } while (ats != 'g' && ats != 'G' && ats != 'm' && ats != 'M');
 
-    sortname(mas); //data sorting by name/lastname;
-    
+    std::sort(mas.begin(), mas.end(), equality); //data sorting by name/lastname;  If "equality" function returns "False", it let's us know, that the "First" argument shouldn't be placed before "Second" argument, arguments would be swaped;
+
     fr << "------------------------------------------------------------------------------" <<endl;
     fr  << left << setw(16) << "Vardas"  << left << setw(14) << "Pavardė " << left << setw(12)  << "Galutinis(Vid.)/Galutinis(Med.)"<<  endl;
     fr << "------------------------------------------------------------------------------" <<endl;
