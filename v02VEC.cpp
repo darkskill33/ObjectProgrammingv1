@@ -1,7 +1,6 @@
 #include "Mylib.h"
 
 
-ofstream fr ("rezultatai.txt");
 
 struct studentas //struct
 {
@@ -168,24 +167,32 @@ void eil_po_eil(string read_vardas, studentas& temp, vector<studentas> &mas) //r
     }
 }
 
-void spausd(studentas& temp, char ats) //printing data to file;
+void spausd(vector<studentas> &mas, char ats) //printing data to file;
 {
-    fr  << left << setw(16) << temp.vardas  << left << setw(14) << temp.pavarde;
-    for(int i = 0; i < temp.paz.size(); i++)
-    {
-        temp.gal += temp.paz[i];
-    } 
-    
-    if (ats == 'G' || ats == 'g')
-    {
-        double kint = (0.4*temp.gal/(double)temp.paz.size() +  temp.egz*0.6);
-        fr << left << setw(19)  << setprecision(2) << fixed << kint  << " - " << endl;  
-    }
+    ofstream fr ("rezultatai.txt");
+    fr << "------------------------------------------------------------------------------" <<endl;
+    fr  << left << setw(16) << "Vardas"  << left << setw(14) << "Pavardė " << left << setw(12)  << "Galutinis(Vid.)/Galutinis(Med.)"<<  endl;
+    fr << "------------------------------------------------------------------------------" <<endl;
 
-    if(ats == 'M' || ats == 'm')
+    for(auto &k : mas)
     {
-        mediana(temp, temp.paz.size());
-        fr << left << setw(19)  << " - " << (0.4*temp.med + temp.egz*0.6)<< endl;
+        fr  << left << setw(16) << k.vardas  << left << setw(14) << k.pavarde;
+        for(int i = 0; i < k.paz.size(); i++)
+        {
+            k.gal += k.paz[i];
+        } 
+    
+        if (ats == 'G' || ats == 'g')
+        {
+            double kint = (0.4*k.gal/(double)k.paz.size() +  k.egz*0.6);
+            fr << left << setw(19)  << setprecision(2) << fixed << kint  << " - " << endl;  
+        }
+
+        if(ats == 'M' || ats == 'm')
+        {
+            mediana(k, k.paz.size());
+            fr << left << setw(19)  << " - " << (0.4*k.med + k.egz*0.6)<< endl;
+        }
     }
 }
 
@@ -216,7 +223,7 @@ int main()
             cout << "Baigti darba spausk n, testi - bet koks klavisas: " << endl;
             cout << "------------------------------------------------------------------------------" <<endl;
             cin >> uzkl;
-        }while (uzkl!='n' && uzkl!='N');   
+        }while (uzkl!='n' && uzkl!='N');  
     } else if(rink == 'f' || rink == 'F')
             {
                 eil_po_eil("kursiokai100000.txt", tempas, mas);
@@ -235,11 +242,7 @@ int main()
 
     sort(mas.begin(), mas.end(), equality); //data sorting by name/lastname;  If "equality" function returns "False", it let's us know, that the "First" argument shouldn't be placed before "Second" argument, arguments would be swaped;
 
-    fr << "------------------------------------------------------------------------------" <<endl;
-    fr  << left << setw(16) << "Vardas"  << left << setw(14) << "Pavardė " << left << setw(12)  << "Galutinis(Vid.)/Galutinis(Med.)"<<  endl;
-    fr << "------------------------------------------------------------------------------" <<endl;
-
-    for(auto &i : mas) spausd(i, ats);
+    spausd(mas, ats); //printing data to file;
     for(auto &i : mas) i.paz.clear();
     mas.clear();
 
