@@ -126,7 +126,7 @@ void eil_po_eil(string read_vardas, studentas& temp, vector<studentas> &mas) //r
 {
     string eil, zod, skaic;
     int times;
-    ifstream open_f; //(read_vardas)
+    ifstream open_f;
     try
     {
         open_f.open(read_vardas);
