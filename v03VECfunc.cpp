@@ -126,7 +126,20 @@ void eil_po_eil(string read_vardas, studentas& temp, vector<studentas> &mas) //r
 {
     string eil, zod, skaic;
     int times;
-    ifstream open_f(read_vardas);
+    ifstream open_f; //(read_vardas)
+    try
+    {
+        open_f.open(read_vardas);
+        if(open_f.fail())
+        throw read_vardas;
+    }
+    catch(string pvd)
+    {
+        cout << "Nėrastas failas: " << pvd << endl;
+        cout << "Paleiskite programa is naujo pasitikrine, ar egzistuoja toks failas Jūsų direktorijoje.." << endl;
+        exit(0);
+    }
+ 
     getline(open_f, eil);
     times = count(eil.begin(), eil.end(), 'N'); //counting a number of homework;
     while (open_f)
@@ -148,6 +161,7 @@ void eil_po_eil(string read_vardas, studentas& temp, vector<studentas> &mas) //r
         }   else break;
     }
 }
+
 
 void spausd(vector<studentas> &mas, char ats) //printing data to file;
 {

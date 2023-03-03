@@ -149,14 +149,15 @@ void eil_po_eil(string read_vardas, studentas& temp, vector<studentas> &mas) //r
     {
         open_f.open(read_vardas);
         if(open_f.fail())
-        throw 404;
+        throw read_vardas;
     }
-    catch(int kodas)
+    catch(string pvd)
     {
-        cout << "Error " << kodas << endl;
+        cout << "Nėrastas failas: " << pvd << endl;
         cout << "Paleiskite programa is naujo pasitikrine, ar egzistuoja toks failas Jūsų direktorijoje.." << endl;
+        exit(0);
     }
-    
+ 
     getline(open_f, eil);
     times = count(eil.begin(), eil.end(), 'N'); //counting a number of homework;
     while (open_f)
@@ -238,7 +239,7 @@ int main()
         }while (uzkl!='n' && uzkl!='N');  
     } else if(rink == 'f' || rink == 'F')
             {
-                eil_po_eil("kursikai100000.txt", tempas, mas);
+                eil_po_eil("kursiokai100000.txt", tempas, mas);
             }
     
 
