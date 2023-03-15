@@ -1,0 +1,20 @@
+
+Įveskite norimo sąrašo dydį: 1000
+Failas: "sarasas1000.txt"
+Failo generavimas užtruko: 0.00491 s.
+
+Įveskite norimo sąrašo dydį: 10000
+Failas: "sarasas10000.txt"
+Failo generavimas užtruko: 0.038901 s.
+
+Įveskite norimo sąrašo dydį: 100000
+Failas: "sarasas100000.txt"
+Failo generavimas užtruko: 0.490742 s.
+
+Įveskite norimo sąrašo dydį: 1000000
+Failas: "sarasas1000000.txt"
+Failo generavimas užtruko: 3.93846 s.
+
+Įveskite norimo sąrašo dydį: 10000000
+Failas: "sarasas10000000.txt"
+Failo generavimas užtruko: 39.9915 s.

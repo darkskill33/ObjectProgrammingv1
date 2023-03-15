@@ -1,0 +1,45 @@
+Darbas su 1000 mokinių failu:
+
+Failo nuskaitymas užtruko: 0.005713 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 0.001508 s.
+Grupių rūšiavimas vargšai ir šaunuoliai užtruko: 0.000791 s.
+Grupės stiprus.txt išvedimas į failą užtruko: 0.031365 s.
+Grupės apsileide.txt išvedimas į failą užtruko: 0.022317 s.
+Programos trukmės laikas: 0.061694s.
+
+Darbas su 10000 mokinių failu:
+
+Failo nuskaitymas užtruko: 0.225245 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 0.291981 s.
+Grupių rūšiavimas vargšai ir šaunuoliai užtruko: 0.0097 s.
+Grupės stiprus.txt išvedimas į failą užtruko: 0.004505 s.
+Grupės apsileide.txt išvedimas į failą užtruko: 0.003321 s.
+Programos trukmės laikas: 0.534752s.
+
+Darbas su 100000 mokinių failu:
+
+Failo nuskaitymas užtruko: 0.957342 s. 
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 1.54404 s.
+Grupių rūšiavimas vargšai ir šaunuoliai užtruko: 0.126932 s.
+Grupės stiprus.txt išvedimas į failą užtruko: 0.039839 s.
+Grupės apsileide.txt išvedimas į failą užtruko: 0.030168 s.
+Programos trukmės laikas: 2.69832s.
+
+Darbas su 1000000 mokinių failu:
+
+Failo nuskaitymas užtruko: 2.55829 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 3.11065 s.
+Grupių rūšiavimas vargšai ir šaunuoliai užtruko: 1.68492 s.
+Grupės stiprus.txt išvedimas į failą užtruko: 0.387609 s.
+Grupės apsileide.txt išvedimas į failą užtruko: 0.273538 s.
+Programos trukmės laikas: 8.01502s.
+
+Darbas su 10000000 mokinių failu:
+
+Failo nuskaitymas užtruko: 16.4509 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 10.2709 s.
+Grupių rūšiavimas vargšai ir šaunuoliai užtruko: 21.3313 s.
+Grupės stiprus.txt išvedimas į failą užtruko: 3.88838 s.
+Grupės apsileide.txt išvedimas į failą užtruko: 2.75437 s.
+Programos trukmės laikas: 54.6958s. 
+
