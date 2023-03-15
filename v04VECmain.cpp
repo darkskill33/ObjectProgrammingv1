@@ -54,6 +54,7 @@ int main()
     } while (ats != 'g' && ats != 'G' && ats != 'm' && ats != 'M');
 
     sort(mas.begin(), mas.end(), equality); //data sorting by name/lastname;  If "equality" function returns "False", it let's us know, that the "First" argument shouldn't be placed before "Second" argument, arguments would be swaped;
+    sort(mas.begin(), mas.end(), grading);
     skirstymas(mas, ats, mldc, blgj, laikas);
     spausd(mldc, ats, "stiprus.txt", laikas); //printing data to file;
     spausd(blgj, ats, "apsileide.txt", laikas); //printing data to file;

@@ -277,7 +277,7 @@ void spausd(vector<studentas> &mas, char ats, string file_name, double &laikas) 
         if(ats == 'M' || ats == 'm')
         {
             char eilut[100];
-            sprintf(eilut, "%-16s%-25s%-5s%-20.2lf\n", k.vardas.c_str(), k.pavarde.c_str(), skirt.c_str(), k.lygin);
+            sprintf(eilut, "%-16s%-25s%-20s%-5.2lf\n", k.vardas.c_str(), k.pavarde.c_str(), skirt.c_str(), k.lygin);
             fr << eilut;
         }
     }
