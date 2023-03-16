@@ -8,7 +8,7 @@ struct studentas //struct
     string vardas, pavarde;
     vector<int> paz;
     double egz;
-    double gal;
+    double gal = 0;
     double med;
     double lygin;
 };
