@@ -44,3 +44,49 @@ Formulė galutinio pažymio skaičiavimui:
 | Grupės stiprus.txt išvedimas (s)                        | 0,031365 | 0,004505 | 0,039839 | 0,387609 | 3,88838  |
 | Grupės apsileide.txt išvedimas (s)                      | 0,022317 | 0,003321 | 0,030168 | 0,273538 | 2,75437  |
 | Programos trukmė (s)                                    | 0,061694 | 0,534752 | 2,69832  | 8,01502  | 54,6958  |
+
+
+## Versija v0.5
+
+Šioje versijoje testuojama skirtingų konteinerių sparta (Vector, Deque, List):
+- Sukurtos trys programos su skirtingais konteineriu tipais;
+- Išmatuotos programų veikimo spartos pagal failo nuskaitymą, rūšiavimą, suskirstymą į dvi dalis;
+
+
+Naudojamo kompiuterio (su kurio buvo atliekami testai) konfiguracijos:
+- CPU Intel i5-8500 3.00GHZ
+- GPU Nvidia GeForce GTX 1050 Ti
+- RAM 8GB
+- SSD 128GB
+
+Rezultatai:
+
+-DEQUE laikai
+| Dydis/Laikas | Nuskaitymas | Rūšiavimas | Skirstymas | Iš viso: |
+|--------------|-------------|------------|------------|----------|
+| 1000         | 0.004317    | 0.002456   | 0.001292   | 0.008065 |
+| 10000        | 0.015438    | 0.039839   | 0.012412   | 0.067689 |
+| 100000       | 0.231829    | 0.450965   | 0.151605   | 0.834399 |
+| 1000000      | 1.46521     | 5.40646    | 1.11423    | 7.98591  |
+| 10000000     | 29.5312     | 65.1683    | 369.947    | 464.646  |
+
+-LIST laikai
+| Dydis/Laikas | Nuskaitymas | Rūšiavimas | Skirstymas | Iš viso: |
+|--------------|-------------|------------|------------|----------|
+| 1000         | 0.005088    | 0.000285   | 0.001607   | 0.00698  |
+| 10000        | 0.017831    | 0.002757   | 0.006546   | 0.027134 |
+| 100000       | 0.571809    | 0.039673   | 0.284875   | 0.896357 |
+| 1000000      | 2.05224     | 0.482547   | 0.964355   | 3.49914  |
+| 10000000     | 14.8531     | 5.71986    | 21.895     | 42.468   |
+
+-VECTOR laikai
+| Dydis/Laikas | Nuskaitymas | Rūšiavimas | Skirstymas | Iš viso: |
+|--------------|-------------|------------|------------|----------|
+| 1000         | 0.003396    | 0.000902   | 0.000605   | 0.004903 |
+| 10000        | 0.018882    | 0.014363   | 0.00334    | 0.036585 |
+| 100000       | 0.207026    | 0.171451   | 0.044294   | 0.422771 |
+| 1000000      | 0.899791    | 2.08785    | 0.340913   | 3.32856  |
+| 10000000     | 8.20936     | 25.4069    | 4.72837    | 38.3446  |
+
+
+
