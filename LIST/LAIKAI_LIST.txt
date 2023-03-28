@@ -1,0 +1,34 @@
+Darbas su 1000 mokinių failu:
+
+Failo nuskaitymas užtruko: 0.005088 s.
+Failo rūšiavimas didėjimo tvarka užtruko: 0.000285 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 0.001607 s.
+Programos trukmės laikas: 0.00698s.
+
+Darbas su 10000 mokinių failu:
+
+Failo nuskaitymas užtruko: 0.017831 s.
+Failo rūšiavimas didėjimo tvarka užtruko: 0.002757 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 0.006546 s.
+Programos trukmės laikas: 0.027134s.
+
+Darbas su 100000 mokinių failu:
+
+Failo nuskaitymas užtruko: 0.571809 s.
+Failo rūšiavimas didėjimo tvarka užtruko: 0.039673 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 0.284875 s.
+Programos trukmės laikas:  0.896357s.
+
+Darbas su 1000000 mokinių failu:
+
+Failo nuskaitymas užtruko: 2.05224 s.
+Failo rūšiavimas didėjimo tvarka užtruko: 0.482547 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 0.964355 s.
+Programos trukmės laikas: 3.49914s.
+
+Darbas su 10000000 mokinių failu:
+
+Failo nuskaitymas užtruko: 14.8531 s.
+Failo rūšiavimas didėjimo tvarka užtruko: 5.71986 s.
+Failo suskirstymas į vargšus ir šaunuolius užtruko: 21.895 s.
+Programos trukmės laikas: 42.468s.
