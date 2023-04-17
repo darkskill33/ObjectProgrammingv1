@@ -89,4 +89,26 @@ Rezultatai:
 | 10000000     | 8.20936     | 25.4069    | 4.72837    | 38.3446  |
 
 
+## Versija v1.0
+Šioje versijoje testuojamas skirtingų strategijų taikymo sparta konteineriams(Vector, Deque, List):
+- 1 Strategija: 
+Bendro studentai konteinerio (vector, list ir deque tipų) skaidymas (rūšiavimas) į du naujus to paties tipo konteinerius: "vargšiukų" ir "kietiakų".
+**Nesunku pastebėti, kad tokia strategija yra neefektyvi užimamos atminties atžvilgiu.**
 
+*Studentų konteinerio skirstymo rezultatai 1 strategija su duomenų failų "sarasas1000000.txt":*
+| Skirstymas | sarasas1000000 |
+|------------|----------------|
+| Deque      | 1.11423        |
+| List       | 0.964355       |
+| Vector     | 0.340913       |
+
+- 2 Strategija:
+Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: "vargšiukai".
+**Atminties atveju tai efektyviau, tačiau dažni trynimai gali būti "skausmingi", ypač tam tikro tipo konteineriams.**
+
+*Studentų konteinerio skirstymo rezultatai 2 strategija su duomenų failų "sarasas1000000.txt":*
+| Skirstymas | sarasas1000000 |
+|------------|----------------|
+| Deque      | 0.728905       |
+| List       | 0.743333       |
+| Vector     | 0.246679       |
