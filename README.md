@@ -90,3 +90,37 @@ Rezultatai:
 
 
 
+## Versija v1.0
+Šioje versijoje testuojamas skirtingų strategijų taikymo sparta konteineriams(Vector, Deque, List):
+- 1 Strategija: 
+Bendro studentai konteinerio (vector, list ir deque tipų) skaidymas (rūšiavimas) į du naujus to paties tipo konteinerius: "vargšiukų" ir "kietiakų".
+**Nesunku pastebėti, kad tokia strategija yra neefektyvi užimamos atminties atžvilgiu.**
+
+*Studentų konteinerio skirstymo rezultatai 1 strategija su duomenų failų "sarasas1000000.txt":*
+| Skirstymas | sarasas1000000 |
+|------------|----------------|
+| Deque      | 1.11423        |
+| List       | 0.964355       |
+| Vector     | 0.340913       |
+
+- 2 Strategija:
+Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: "vargšiukai".
+**Atminties atveju tai efektyviau, tačiau dažni trynimai gali būti "skausmingi", ypač tam tikro tipo konteineriams.**
+
+*Studentų konteinerio skirstymo rezultatai 2 strategija su duomenų failų "sarasas1000000.txt":*
+| Skirstymas | sarasas1000000 |
+|------------|----------------|
+| Deque      | 0.728905       |
+| List       | 0.743333       |
+| Vector     | 0.246679       |
+
+
+## INSTRUKCIJA NORIMOS PROGRAMOS PALEIDIMUI: 
+- Pasidarykite mano github repositorijos clone'ą. Kaip tai padaryti? Spauskite: [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+- Atsidarykite mano repositorijos clone'ą.
+- Pasirinkite versiją, kurią norite realizuoti (naviguokite terminale komandomis cd {folderio pavadinimas}/{folderio pavadinimas} kol atsidursite išsaugoto clono folderyje).
+- Pasiekę folderį atsidarykite pasirinktą realizaciją (komanda cd {realizacijos folderio pavadinimas}).
+- Terminale sukompiliuojame programą komanda (make).
+- Paleidžiame sukompiliuotą programą komanda (./main).
+
+**Gero naudojimo!**
