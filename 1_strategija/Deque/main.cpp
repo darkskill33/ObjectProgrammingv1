@@ -34,7 +34,7 @@ int main()
             {
                 string pavad;
                 cout <<" Pasirinkite failą: " << endl;
-                system("dir /b *.txt");
+                system("dir /b sar*.txt");
                 cin >> pavad;
                 
                 eil_po_eil(pavad, tempas, mas, laikas);
