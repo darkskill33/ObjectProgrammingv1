@@ -1,6 +1,8 @@
 # ObjectProgramming
 All projects related to my University "Object Programming" class will be stored in this repository.
 
+# UŽDUOTIS nr. 1
+
 ## Versija v0.1
 - Mokinių  galutinių pažymių vidurkio/medianos skaičiavimo programa.
 - Leidžianti atsitiktinai generuoti mokinio pažymius arba įvesti pažymius ranka.
@@ -124,3 +126,12 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 - Paleidžiame sukompiliuotą programą komanda (./main).
 
 **Gero naudojimo!**
+
+
+# UŽDUOTIS nr. 2
+
+## Versija v1.1
+- Perrašyta v1.0 versijos projekto realizacija (Iš struct'ūros pereiname į class'e).
+- Palyginta abiejų programų: naudojančios struct iš v1.0 ir naudojančios class tipo Studentus iš dabartinės realizacijos studentu dalijimo sparta, naudojant vector konteinerį ir (100000 ir 1000000) dydžio failus.
+
+KĄ TIKSLIAI REIKIA IŠMATUOTI? :D
