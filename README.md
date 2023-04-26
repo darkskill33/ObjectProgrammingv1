@@ -124,3 +124,24 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 - Paleidžiame sukompiliuotą programą komanda (./main).
 
 **Gero naudojimo!**
+
+
+# UŽDUOTIS nr. 2
+
+## Versija v1.1
+- Perrašyta v1.0 versijos projekto realizacija (Iš struct'ūros pereiname į class'e).
+- Palyginta abiejų programų: naudojančios struct iš v1.0 ir naudojančios class tipo Studentus iš dabartinės realizacijos spartą (veikimo laiką), naudojant vector konteinerį, pačią greičiausią dalijimo strategiją ir (100000 ir 1000000) dydžio failus.
+
+| Failo vykdymo laiko priklausomybė nuo class arba struct |             |             |             |             |             |             |             |             |             |             |             |             |
+|---------------------------------------------------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
+| Tipas                                                   | Struct      | Class       | Struct      | Class       | Struct      | Class       | Struct      | Class       | Struct      | Class       | Struct      | Class       |
+| Kompiliavimo flag                                       | "-01"       | "-01"       | "-01"       | "-01"       | "-02"       | "-02"       | "-02"       | "-02"       | "-03"       | "-03"       | "-03"       | "-03"       |
+| Failo dydis                                             | 100000      | 100000      | 1000000     | 1000000     | 100000      | 100000      | 1000000     | 1000000     | 100000      | 100000      | 1000000     | 1000000     |
+| Failo nuskaitymas (s)                                   | 0.183529 s. | 0.22823 s.  | 0.932517 s. | 1.09169 s.  | 0.183787 s. | 0.227186 s. | 0.919718 s. | 1.09085 s.  | 0.190462 s. | 0.237933 s. | 0.917869 s. | 1.10524 s.  |
+| Failo suskirstymas (s)                                  | 0.030521 s. | 0.046134 s. | 0.276963 s. | 0.414133 s. | 0.029611 s. | 0.047379 s. | 0.259452 s. | 0.415542 s. | 0.029636 s  | 0.046146 s. | 0.262253 s. | 0.415397 s. |
+| Grupės stiprus.txt išvedimas (s)                        | 0.044331 s. | 0.04284 s.  | 0.467568 s. | 0.457604 s. | 0.042131 s. | 0.044632 s. | 0.45423 s.  | 0.463609 s. | 0.044363 s. | 0.044708 s. | 0.456916 s. | 0.465614 s. |
+| Grupės apsileide.txt išvedimas (s)                      | 0.033909 s. | 0.030708 s. | 0.330712 s. | 0.316985 s. | 0.030269 s. | 0.033344 s. | 0.337276 s. | 0.329189 s. | 0.032515 s. | 0.033426 s. | 0.347602 s. | 0.308393 s. |
+| Programos trukmė (s)                                    | 0.29229s.   | 0.347912s.  | 2.00776s.   | 2.28041s.   | 0.285798s.  | 0.352541s.  | 1.97068s.   | 2.29919s.   | 0.296976s.  | 0.362213s.  | 1.98464s.   | 2.29464s.   |
+
+- Struct .exe failo dydis: 3107KB
+- Class .exe failo dydis: 3109KB
