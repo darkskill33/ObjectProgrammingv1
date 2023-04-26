@@ -145,6 +145,6 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 | Grupės apsileide.txt išvedimas (s)                      | 0.033909 s. | 0.030708 s. | 0.330712 s. | 0.316985 s. | 0.030269 s. | 0.033344 s. | 0.337276 s. | 0.329189 s. | 0.032515 s. | 0.033426 s. | 0.347602 s. | 0.308393 s. |
 | Programos trukmė (s)                                    | 0.29229s.   | 0.347912s.  | 2.00776s.   | 2.28041s.   | 0.285798s.  | 0.352541s.  | 1.97068s.   | 2.29919s.   | 0.296976s.  | 0.362213s.  | 1.98464s.   | 2.29464s.   |
 
-Struct .exe failo dydis: 3107KB
-Class .exe failo dydis: 3109KB
+- Struct .exe failo dydis: 3107KB
+- Class .exe failo dydis: 3109KB
 
