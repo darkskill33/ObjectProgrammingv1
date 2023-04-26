@@ -10,9 +10,9 @@ class studentas //class
         string vardas, pavarde;
         vector<int> paz;
         double egz;
-        double gal;
+        double gal; //paz suma
         double med;
-        double lygin;
+        double lygin; //galutinis ivertis
     public:
         //setter
         void setVardas(string v) { vardas = v; }
@@ -31,6 +31,7 @@ class studentas //class
         inline double getGal() const { return gal; }
         inline double getMed() const { return med; }
         inline double getLygin() const { return lygin; }
+        ~studentas() {clearPaz();} //destruktorius
 
 };
 
