@@ -59,6 +59,7 @@ int main()
     skirstymas(mas, ats, blgj, laikas);
     spausd(mas, ats, "stiprus.txt", laikas); //printing data to file;
     spausd(blgj, ats, "apsileide.txt", laikas); //printing data to file;
+    cout << "Programos trukmės laikas: " << laikas << "s. \n";
 
     for(auto &i : mas) i.getPaz().clear();
     mas.clear();

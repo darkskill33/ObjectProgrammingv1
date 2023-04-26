@@ -43,8 +43,9 @@ void studentas::setPaz(int x)
 
 void mediana(studentas &temp, int n) //mediana search function;
 {
-    sort(temp.getPaz().begin(), temp.getPaz().end()); //sorting grades (descending);
+    
     vector<int> kopija_paz = temp.getPaz();
+    sort(kopija_paz.begin(), kopija_paz.end()); //sorting grades (descending);
     float mid1, mid2;
     if(n == 2*(n/2))
     {
@@ -149,7 +150,7 @@ void eil_po_eil(string read_vardas, studentas& temp, vector<studentas> &mas, dou
 {
     string eil, zod, skaic;
     int times;
-    // auto start = std::chrono::high_resolution_clock::now(); auto st=start;
+    auto start = std::chrono::high_resolution_clock::now(); auto st=start;
     ifstream open_f; //(read_vardas)
     try
     {
@@ -192,15 +193,15 @@ void eil_po_eil(string read_vardas, studentas& temp, vector<studentas> &mas, dou
             temp.clearPaz();
         }   else break;
     }
-    // auto end = std::chrono::high_resolution_clock::now();
-    // std::chrono::duration<double> diff = end-start; // Skirtumas (s)
-    // cout << "Failo nuskaitymas užtruko: "<< diff.count() << " s." << endl;   
-    // laikas += diff.count();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diff = end-start; // Skirtumas (s)
+    cout << "Failo nuskaitymas užtruko: "<< diff.count() << " s." << endl;   
+    laikas += diff.count();
 }
 
 void generate(string pavadinimas, int size)
 {
-    // auto start = std::chrono::high_resolution_clock::now(); auto st=start;
+    auto start = std::chrono::high_resolution_clock::now(); auto st=start;
     ofstream fs (pavadinimas);
     srand(time(0));
     int pazym_sk = (rand()%20)+1; //generating random homework grades number. NOW ITS [1; 20];
@@ -224,9 +225,9 @@ void generate(string pavadinimas, int size)
         }
         fs << left << setw(10) << (rand()%10)+1 << endl;
     }
-    // auto end = std::chrono::high_resolution_clock::now();
-    // std::chrono::duration<double> diff = end-start; // Skirtumas (s)
-    // cout << "Failo generavimas užtruko: "<< diff.count() << " s." << endl; 
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diff = end-start; // Skirtumas (s)
+    cout << "Failo generavimas užtruko: "<< diff.count() << " s." << endl; 
 }
 
 void skirstymas(vector<studentas> &mas, char ats, vector<studentas> &blgj, double &laikas) //sorting students to good and bad ones;
@@ -263,7 +264,7 @@ void skirstymas(vector<studentas> &mas, char ats, vector<studentas> &blgj, doubl
 
 void spausd(vector<studentas> &mas, char ats, string file_name, double &laikas) //printing data to file;
 {
-    
+    auto start = std::chrono::high_resolution_clock::now(); auto st=start;
     ofstream fr (file_name);
     fr << "------------------------------------------------------------------------------" <<endl;
     fr << left << setw(16) << "Vardas"  << left << setw(25) << "Pavardė " << left << setw(20)  << "Galutinis(Vid.)/Galutinis(Med.)"<<  endl;
@@ -285,5 +286,9 @@ void spausd(vector<studentas> &mas, char ats, string file_name, double &laikas) 
             fr << eilut;
         }
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diff = end-start; // Skirtumas (s)
+    cout << "Grupės " << file_name << " išvedimas į failą užtruko: "<< diff.count() << " s." << endl;  
+    laikas += diff.count();
    
 }
