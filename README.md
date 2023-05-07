@@ -145,3 +145,8 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 
 - Struct .exe failo dydis: 3107KB
 - Class .exe failo dydis: 3109KB
+
+
+## Versija v1.2
+- Realizuota "Rule of Five".
+- Sukurti: ***copy constructor, move constructor, copy assignment, move assignment, destructor***.
