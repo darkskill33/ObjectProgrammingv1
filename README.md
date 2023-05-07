@@ -150,3 +150,6 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 ## Versija v1.2
 - Realizuota "Rule of Five".
 - Sukurti: ***copy constructor, move constructor, copy assignment, move assignment, destructor***.
+
+## Versija v1.5
+- Sukurta bazinė klasė "zmogus" ir jos išvestinė klasė "studentas".
