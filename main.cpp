@@ -7,9 +7,19 @@ int main()
     pavyzdys.setEgz(10);
     pavyzdys.setPaz(7);
     pavyzdys.setPaz(8);
-    studentas copy_c = pavyzdys;
-    studentas move_a(copy_c);
-    cout << move_a.getVardas() << " " <<  move_a.getPavarde() << " " << move_a.getEgz() << endl;
+    studentas pavyzdys2(pavyzdys); //copy constructor;
+    studentas pavyzdys3;
+    pavyzdys3 = pavyzdys2; //copy assignment;
+    studentas pavyzdys4 = std::move(studentas("vardas", "pavarde")); //move constructor;
+    studentas naujokas;
+    naujokas = std::move(pavyzdys3); //move assignment;
+    cout << naujokas << endl;
+    cout << pavyzdys3 << endl;
+
+    studentas naujokas1;
+    cout << "Iveskite varda, pavarde, egzamino pazymi"<<endl;
+    cin >> naujokas1;
+    cout << naujokas1<< endl;
 
 
     vector<studentas> mas;

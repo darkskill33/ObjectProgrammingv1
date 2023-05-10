@@ -18,6 +18,8 @@
 #include <iterator>
 
 
+using std::istream;
+using std::ostream;
 using std::cout;
 using std::cin;
 using std::endl;

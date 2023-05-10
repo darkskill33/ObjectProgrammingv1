@@ -16,9 +16,9 @@ class studentas //class
 
     public:
         //constructor
-        studentas() {
-            vardas = "Skubis";
-            pavarde = "Dooo";
+        studentas(string v = "Skubis", string p = "Dooo") {
+            vardas = v;
+            pavarde = p;
             egz = 0;
             gal = 0;
             med = 0;
@@ -27,6 +27,7 @@ class studentas //class
 
         //copy constructor
         studentas(const studentas& other) {
+            cout << "COPY CONSTRUCTOR" << endl;
             vardas = other.vardas;
             pavarde = other.pavarde;
             paz = other.paz;
@@ -38,18 +39,20 @@ class studentas //class
 
         //move constructor
         studentas(studentas&& other) noexcept{
-            vardas = std::move(other.vardas);
-            pavarde = std::move(other.pavarde);
+            cout << "MOVE CONSTRUCTOR" << endl;
+            vardas = other.vardas;
+            pavarde = other.pavarde;
             paz = std::move(other.paz);
-            egz = std::move(other.egz);
-            gal = std::move(other.gal);
-            med = std::move(other.med);
-            lygin = std::move(other.lygin);
+            egz = other.egz;
+            gal = other.gal;
+            med = other.med;
+            lygin = other.lygin;
+            other.~studentas();
         }
 
         //copy assignment
         studentas& operator=(const studentas& sign) {
-
+            cout << "copy assignment" << endl;
             if(this != &sign)
             {
                 vardas = sign.vardas;
@@ -65,17 +68,31 @@ class studentas //class
 
         //move assignment
         studentas& operator=(studentas&& sign) noexcept{
+            cout << "move assignment" << endl;
             if(this != &sign) {
                 vardas = std::move(sign.vardas);
                 pavarde = std::move(sign.pavarde);
                 paz = std::move(sign.paz);
-                egz = std::move(sign.egz);
+                std::swap(egz, sign.egz);
                 gal = std::move(sign.gal);
                 med = std::move(sign.med);
                 lygin = std::move(sign.lygin);
+                sign.~studentas();
             }
             return *this;
         }
+
+        //input operator
+	    friend istream &operator>>(istream& input, studentas& studentas ) { 
+        input >> studentas.vardas >> studentas.pavarde >> studentas.egz;
+        return input;
+        }            
+
+        //output operator
+        friend ostream &operator<<(ostream& output, const studentas& studentas) { 
+        output << studentas.vardas<< " " << studentas.pavarde << " " << studentas.egz;
+        return output;
+      }
 
 
 
@@ -96,7 +113,7 @@ class studentas //class
         inline double getGal() const { return gal; }
         inline double getMed() const { return med; }
         inline double getLygin() const { return lygin; }
-        ~studentas() {clearPaz();} //destruktorius
+        ~studentas() {vardas.clear(), pavarde.clear(), clearPaz();} //destruktorius
 
 };
 
