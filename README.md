@@ -153,3 +153,4 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 
 ## Versija v1.5
 - Sukurta bazinė klasė "zmogus" ir jos išvestinė klasė "studentas".
+- Pataisyta iki pilno funkcionalumo. (v1.5.1)
