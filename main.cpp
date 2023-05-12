@@ -15,12 +15,12 @@ int main()
     naujokas = std::move(pavyzdys3); //move assignment;
     cout << naujokas << endl;
     cout << pavyzdys3 << endl;
-
+    //pavyzdys.randominfo();
     studentas naujokas1;
     cout << "Iveskite varda, pavarde, egzamino pazymi"<<endl;
     cin >> naujokas1;
     cout << naujokas1<< endl;
-
+    
     vector<studentas> mas;
     studentas tempas;
     vector<studentas> blgj;

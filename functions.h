@@ -18,7 +18,7 @@ class zmogus
 
     virtual void setVardas(string& v) { vardas = v; }
     virtual void setPavarde(string& p) { pavarde = p; }
-    virtual void setPaz(int x) = 0;
+    virtual void randominfo() = 0;
 
     virtual ~zmogus() {};
 
@@ -66,7 +66,15 @@ class studentas : public zmogus//class
             gal = other.gal;
             med = other.med;
             lygin = other.lygin;
-            other.~studentas();
+            
+            // clean
+            other.vardas = "";
+            other.pavarde = "";
+            other.egz = 0;
+            other.gal = 0;
+            other.med = 0;
+            other.lygin = 0;
+
         }
 
         //copy assignment
@@ -131,6 +139,12 @@ class studentas : public zmogus//class
         inline double getGal() const { return gal; }
         inline double getMed() const { return med; }
         inline double getLygin() const { return lygin; }
+
+        void randominfo()
+        {
+            cout << getPavarde() << " " << getVardas() << " " << getEgz() << endl;
+        }
+
         ~studentas() {clearPaz();} //destruktorius
 
 };
