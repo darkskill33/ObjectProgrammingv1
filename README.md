@@ -154,3 +154,12 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 ## Versija v1.5
 - Sukurta bazinė klasė "zmogus" ir jos išvestinė klasė "studentas".
 - Pataisyta iki pilno funkcionalumo. (v1.5.1)
+
+## Versija v2.0
+- Sukurta Doxygen dokumentacija, kurią rasite V2.0 branch'e po failu "doxygen".
+- Sukurti Unit Testai su "Catch 2" frameworku. Testus rasite V2.0 branch'e po failu "test".
+- Sukurtas automatinis idiegimo failas "ProgramInstallSetup.exe", kurį galite rasti v2.0 branch'e po failu "download"
+
+***Trumpa atsisiuntimo instrukcija:*** Atsisiunčiame **ProgramInstallSetup.exe** failą ir jį paleidžiame. Sekame instrukcijas ir susiinstaliuojame failą į norimą aplanką. Norint ištrinti failą iš naujo paleidžiame **ProgramInstallSetup.exe** failą ir pasirenkame **remove rogramInstallSetup.exe file**.
+
+***Trumpa naudojimo instrukcija:*** Atsidarome suinstaliuotą failą. Kadangi programa sudaro/apdoroja studentų duomenis, pirmiausia pasirenkame norimą studentų duomenų apdorojimo būdą (**arba pasirenkame "generuoti duomenų failą**). *generavus studentų failą būtinai paleiskite programą iš naujo*. Paleidus programą iš naujo galite pasirinkti failą, kuris buvo sugeneruotas ir sekant ekrane rašomą tekstą atlikti norimus veiksmus.
