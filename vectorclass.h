@@ -12,6 +12,7 @@ template <typename T> class vectorclass
 
     public: 
     using iterator = T*;
+    using value_type = T;
     
     /// Member functions
     vectorclass() ///constructor
