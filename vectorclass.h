@@ -12,6 +12,7 @@ template <typename T> class vectorclass
 
     public: 
     using iterator = T*;
+    
     /// Member functions
     vectorclass() ///constructor
     {
@@ -27,16 +28,17 @@ template <typename T> class vectorclass
 
     vectorclass<T>& operator=(const vectorclass<T>& other) ///copy assignment
     { 
-        if(this != &other)
+        if (this != &other)
         {
             capacity = other.capacity;
             size = other.size;
-            other.array = new T[other.capacity];
-            array = other.array;
-            delete [] array;
+            delete[] array;
+            array = new T[capacity];
+            std::copy(other.array, other.array + other.size, array);
         }
         return *this;
     }
+
 
     std::allocator<T> get_allocator() const
     {
@@ -80,35 +82,34 @@ template <typename T> class vectorclass
         return array[index];
     } 
 
-    T& front(size_t index)
+    T& front()
     {
         return array[0];
     }
 
-    T& back(size_t index)
+    T& back()
     {
-        return array[size-1];
+        return array[size - 1];
     }
-
 
     bool empty() const 
     {
         return size == 0;
     }
 
-    int size_()
+    size_t size_()
     {
         return size;
     }
 
-    int max_size()
-    {
-        return std::numeric_limits<int>::max();
-    } 
-
-    int capacity_()
+    size_t capacity_()
     {
         return capacity;
+    }
+
+    size_t max_size()
+    {
+        return std::numeric_limits<size_t>::max();
     }
 
     void reserve(size_t new_capacity) {
@@ -132,19 +133,21 @@ template <typename T> class vectorclass
 
     void insert(T x, size_t place)
     {
-        if(capacity == place)
-        {
-            push_back(x);
-        } else
-            {
-                for(int i = size - 1; i >= place; --i)
-                {
-                    array[i + 1] = array[i];
-                }
-                array[place] = place;
-                size+=1;
-            }
+    if (size == place)
+    {
+        push_back(x);
     }
+    else
+        {
+            for (int i = size - 1; i >= place; --i)
+            {
+                array[i + 1] = array[i];
+            }
+            array[place] = x;
+            size += 1;
+        }
+    }
+
 
     void erase(size_t index)
     {
@@ -161,7 +164,6 @@ template <typename T> class vectorclass
         size -= count;
         return first;
     }
-
 
     void push_back(T x)
     {
@@ -182,14 +184,19 @@ template <typename T> class vectorclass
         array[size] = x;
         size++;
     }
-     void push_back(T x, int index)
+
+    void push_back(T x, size_t index)
     {
         if (index == capacity)
         {
             push_back(x);
-        } else
+        }
+        else
+        {
             array[index] = x;
+        }
     }
+
 
     void pop_back()
     {
@@ -223,8 +230,9 @@ template <typename T> class vectorclass
         {
             cout << array[i] << " ";
         }
-        cout << endl;
+        cout << std::endl;
     }
+
 };
 
 #endif
