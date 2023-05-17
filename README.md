@@ -171,3 +171,12 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 
 - Realizuota dalis identiškų kaip standartinio vektoriaus funkcijų (kaip pvz.: ***push_back, pop_back, resize, erase, insert***).
 - vectorclass ir vector vektorių spartos analizė. ***push_back()*** funkcija užpildomi tušti vektoriai:
+
+|                 | Vektoriaus tipai/laikai |          |
+|-----------------|-------------------------|----------|
+| Elementų kiekis | vectorclass             | vector   |
+| 10000           | 0.000795                | 0.001174 |
+| 100000          | 0.001451                | 0.001809 |
+| 1000000         | 0.008784                | 0.021289 |
+| 10000000        | 0.100917                | 0.130942 |
+| 100000000       | 0.837884                | 1.2079   |
