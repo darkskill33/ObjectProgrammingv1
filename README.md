@@ -180,3 +180,5 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 | 1000000         | 0.008784                | 0.021289 |
 | 10000000        | 0.100917                | 0.130942 |
 | 100000000       | 0.837884                | 1.2079   |
+
+- Atminties perskirstymai užpildant 100000000 elementų ***vector*** konteineryje - 28, o ***vectorclass*** konteineryje - 27.
