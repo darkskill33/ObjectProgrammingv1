@@ -11,7 +11,7 @@ template <typename T> class vectorclass
         T* array;
 
     public: 
-
+    using iterator = T*;
     /// Member functions
     vectorclass() ///constructor
     {
@@ -25,7 +25,8 @@ template <typename T> class vectorclass
         delete [] array;
     }
 
-    vectorclass<T>& operator=(const vectorclass& other) { ///copy assignment
+    vectorclass<T>& operator=(const vectorclass<T>& other) ///copy assignment
+    { 
         if(this != &other)
         {
             capacity = other.capacity;
@@ -40,6 +41,27 @@ template <typename T> class vectorclass
     std::allocator<T> get_allocator() const
     {
         return std::allocator<T>();
+    }
+
+    ///Iterator
+    iterator begin() const 
+    {
+        return array;
+    }
+
+    iterator cbegin() const 
+    {
+        return array;
+    }
+
+    iterator end() 
+    {
+        return array + size;
+    }
+
+    iterator cend() 
+    {
+        return array + size;
     }
 
     ///Element Access
@@ -133,13 +155,20 @@ template <typename T> class vectorclass
         size--;
     }
 
+    iterator erase(iterator first, iterator last) {
+        size_t count = last - first;
+        std::copy(last, end(), first);
+        size -= count;
+        return first;
+    }
+
+
     void push_back(T x)
     {
         if(size == capacity) 
         {
             T* tmp = new T[capacity*2];
         
-
             for(int i = 0; i < capacity; i++) 
             {
                 tmp[i] = array[i];
