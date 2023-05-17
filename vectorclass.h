@@ -37,11 +37,6 @@ template <typename T> class vectorclass
         return *this;
     }
 
-    void assign()
-    {
-
-    }
-
     std::allocator<T> get_allocator() const
     {
         return std::allocator<T>();
@@ -158,10 +153,18 @@ template <typename T> class vectorclass
         array[size] = x;
         size++;
     }
+     void push_back(T x, int index)
+    {
+        if (index == capacity)
+        {
+            push_back(x);
+        } else
+            array[index] = x;
+    }
 
     void pop_back()
     {
-        size -= 1;
+        --size;
     }
 
     void resize(size_t newsize, const T& x)
@@ -175,14 +178,23 @@ template <typename T> class vectorclass
                     {
                         reserve(newsize);
                     }   
-                    fil(array.size(), newsize, x);
-                    capacity = newsize;
+                    std::fill(array + size, array + capacity, x);
+                    size = newsize;
                 }
     }
 
     void resize(size_t newsize)
     {
         resize(newsize, T());
+    }
+
+    void print()
+    {
+        for (int i = 0; i < size; i++) 
+        {
+            cout << array[i] << " ";
+        }
+        cout << endl;
     }
 };
 
