@@ -163,3 +163,20 @@ Bendro studentų konteinerio (vector, list ir deque) skaidymas (rūšiavimas) pa
 ***Trumpa atsisiuntimo instrukcija:*** Atsisiunčiame **ProgramInstallSetup.exe** failą ir jį paleidžiame. Sekame instrukcijas ir susiinstaliuojame failą į norimą aplanką. Norint ištrinti failą iš naujo paleidžiame **ProgramInstallSetup.exe** failą ir pasirenkame **remove rogramInstallSetup.exe file**.
 
 ***Trumpa naudojimo instrukcija:*** Atsidarome suinstaliuotą failą. Kadangi programa sudaro/apdoroja studentų duomenis, pirmiausia pasirenkame norimą studentų duomenų apdorojimo būdą (**arba pasirenkame "generuoti duomenų failą**). *generavus studentų failą būtinai paleiskite programą iš naujo*. Paleidus programą iš naujo galite pasirinkti failą, kuris buvo sugeneruotas ir sekant ekrane rašomą tekstą atlikti norimus veiksmus.
+
+
+## VECTORCLASS
+
+- Realizuota dalis identiškų kaip standartinio vektoriaus funkcijų (kaip pvz.: ***push_back, pop_back, resize, erase, insert***).
+- vectorclass ir vector vektorių spartos analizė. ***push_back()*** funkcija užpildomi tušti vektoriai:
+
+|                 | Vektoriaus tipai/laikai |          |
+|-----------------|-------------------------|----------|
+| Elementų kiekis | vectorclass             | vector   |
+| 10000           | 0.000795                | 0.001174 |
+| 100000          | 0.001451                | 0.001809 |
+| 1000000         | 0.008784                | 0.021289 |
+| 10000000        | 0.100917                | 0.130942 |
+| 100000000       | 0.837884                | 1.2079   |
+
+- Atminties perskirstymai užpildant 100000000 elementų ***vector*** konteineryje - 28, o ***vectorclass*** konteineryje - 27.
